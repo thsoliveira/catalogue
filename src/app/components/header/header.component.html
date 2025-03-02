@@ -1,0 +1,13 @@
+<header class="header">
+    <div class="logo">
+        <a [routerLink]="['/']"><span class="brand-green">THS</span></a>
+    </div>
+    <nav class="nav-links">
+        <a [routerLink]="['/']">Home</a>
+        <a [routerLink]="['/about']">About me</a>
+    </nav>
+    <app-search></app-search>
+    <button (click)="toggleTheme()">
+        <ng-icon [name]="isDarkMode ? 'bootstrap:sun' : 'bootstrap:moon'"></ng-icon>
+    </button>
+</header>

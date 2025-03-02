@@ -1,0 +1,38 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #ccc;
+    padding-left: 1rem;
+
+    &.dark-mode {
+        border-left: 1px solid #555;
+    }
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary-text);
+
+    &.dark-mode {
+        background: #333;
+        color: var(--primary-text);
+    }
+}
+
+.search-button {
+    background-color: transparent;
+    border: 0;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+
+    &.dark-mode {
+        color: var(--primary-text);
+    }
+}
