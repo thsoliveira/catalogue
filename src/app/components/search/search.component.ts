@@ -24,5 +24,6 @@ export class SearchComponent {
     } else {
       this.router.navigate(['/fallback']);
     }
+    this.query = '';
   }
 }
