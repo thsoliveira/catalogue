@@ -12,8 +12,11 @@ import { NgIconsModule } from '@ng-icons/core';
 })
 export class SearchComponent {
   query: string = '';
+  isDarkMode = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.isDarkMode = document.documentElement.classList.contains('dark-mode');
+  }
 
   performSearch() {
     if (this.query !== '') {

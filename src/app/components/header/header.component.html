@@ -7,7 +7,7 @@
         <a [routerLink]="['/about']">About me</a>
     </nav>
     <app-search></app-search>
-    <button (click)="toggleTheme()">
+    <button (click)="toggleTheme()" class="theme-button">
         <ng-icon [name]="isDarkMode ? 'bootstrap:sun' : 'bootstrap:moon'"></ng-icon>
     </button>
 </header>

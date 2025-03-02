@@ -1,11 +1,19 @@
+ :host {
+   height: calc(100% - 125px);
+   display: flex;
+   flex-direction: column;
+ }
  .container {
    padding: 2rem;
-   max-width: 800px;
+  width: 800px;
    margin: auto;
  }
 
- h2 {
+ .title {
+   text-transform: uppercase;
+   color: var(--primary-color);
    text-align: center;
+  margin-bottom: 3rem;
  }
 
  .category-list {
@@ -17,16 +25,18 @@
  }
 
  .category-item {
-   background: var(--primary-bg, #f5f5f5);
+  background: var(--primary-bg);
    padding: 1rem;
    border-radius: 8px;
    transition: background 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
  }
 
  .category-item a {
    text-decoration: none;
    font-weight: bold;
-   color: var(--primary-text, #333);
+  display: block;
+    color: var(--primary-color);
  }
 
  .category-item:hover {

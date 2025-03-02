@@ -1,0 +1,26 @@
+.footer {
+    background-color: var(--primary-color);
+    color: var(--primary-bg);
+    padding: 1rem 0;
+    text-align: center;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    nav {
+        margin-top: 0.5rem;
+
+        a {
+            margin: 0 1rem;
+            color: var(--primary-text);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

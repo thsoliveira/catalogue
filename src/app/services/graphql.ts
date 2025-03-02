@@ -44,7 +44,7 @@ export const GET_PRODUCT = gql`
       }
       price
       category {
-        products(first: 3) {
+        products {
           slug
           name
           image {
