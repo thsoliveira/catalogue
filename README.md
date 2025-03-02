@@ -1,59 +1,70 @@
-# Catalogue
+# Angular Product Catalogue
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+## 🚀 Overview
+This is a **Product Catalogue Web App** built with **Angular 19**. The app allows users to browse categories, view products, and access detailed product information. It integrates with a **GraphQL API** and supports **light/dark mode**.
 
-## Development server
+## 📌 Features
+- **Home Page**: Displays categories with product counts.
+- **Category View**: Lists all products under a selected category.
+- **Product Detail Page**:
+  - Shows product details (name, price, description, image).
+  - Includes a **countdown timer** (RxJS) for next-day delivery.
+  - Displays **3 related products** from the same category.
+- **Search Functionality**: Users can search for products dynamically.
+- **GraphQL API**: Fetches data from a headless CMS.
+- **Dark Mode Support**: Toggle between light and dark themes.
+- **Responsive Design**: Uses CSS Grid, Flexbox, and SCSS for styling.
 
-To start a local development server, run:
+## 🛠️ Tech Stack
+- **Angular 19** (Standalone Components)
+- **Apollo GraphQL** (for API requests)
+- **SCSS** (for styling)
+- **RxJS** (for state management and countdown timer)
+- **TypeScript** (strongly typed data models)
+- **NgIcons** (for icons)
 
-```bash
-ng serve
+## 🔧 Installation & Setup
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/thsoliveira/catalogue.git
+   cd catalogue
+   ```
+
+2. **Install Dependencies**:
+   ```sh
+   npm install
+   ```
+
+3. **Start the Development Server**:
+   ```sh
+   ng serve
+   ```
+
+4. **Open in Browser**:
+   Navigate to `http://localhost:4200/`.
+
+## 🌟 Usage
+- Browse product **categories**.
+- Click on a category to view **products**.
+- Select a product to see its **details** and **related products**.
+- Use the **search bar** to find products.
+- Toggle **dark/light mode** using the button in the header.
+
+## 🚀 Deployment
+To build for production:
+```sh
+ng build --configuration=production
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+To deploy, use **Firebase, Vercel, Netlify, or AWS**.
 
-## Code scaffolding
+## 🎯 Future Enhancements
+- **User Authentication** (Login/Signup with JWT)
+- **Add to Cart & Checkout**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📩 Contact
+For questions or suggestions, contact **Thais Oliveira** at [borgesoliveira.thais@gmail.com](mailto:borgesoliveira.thais@gmail.com).
 
-```bash
-ng generate component component-name
-```
+---
+Happy Coding! 🎉
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

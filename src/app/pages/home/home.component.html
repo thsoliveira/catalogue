@@ -1,0 +1,12 @@
+<div class="container">
+    <h2 class="title">Categories</h2>
+    <ul class="category-list">
+        @for (category of categories; track category.slug) {
+        <li class="category-item">
+            <a [routerLink]="['/category', category.slug]">
+                {{ category.name }} ({{ category.products.length }})
+            </a>
+        </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,15 @@
+:host {
+  height: 100%
+}
+.container {
+  height: 100%;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--primary-color);
+}
+footer {
+  margin-top: auto;
+}
