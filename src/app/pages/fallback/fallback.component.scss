@@ -1,11 +1,19 @@
 .container {
     display: flex;
     gap: 1rem;
-        align-items: center;
+    align-items: center;
     flex-direction: column;
     height: calc(100% - 125px);
     padding: 3rem 1rem;
     width: 800px;
-        max-width: 100%;
+    max-width: 100%;
     margin: auto;
+}
+.link {
+    background-color: var(--primary-color);
+    color: var(--primary-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
 }
