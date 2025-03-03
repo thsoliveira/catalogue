@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgIconsModule } from '@ng-icons/core';
+import { map, Observable } from 'rxjs';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-search',
@@ -12,10 +14,12 @@ import { NgIconsModule } from '@ng-icons/core';
 })
 export class SearchComponent {
   query: string = '';
-  isDarkMode = false;
+  isDarkMode$: Observable<boolean>;
 
-  constructor(private router: Router) {
-    this.isDarkMode = document.documentElement.classList.contains('dark-mode');
+  constructor(private router: Router, private themeService: ThemeService) {
+    this.isDarkMode$ = this.themeService.theme$.pipe(
+      map(theme => theme === 'dark')
+    );
   }
 
   performSearch() {

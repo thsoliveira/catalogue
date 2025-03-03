@@ -1,14 +1,32 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { CategoryComponent } from './pages/category/category.component';
-import { AboutComponent } from './pages/about/about.component';
-import { SearchResultsComponent } from './pages/search-results/search-results.component';
-import { FallbackComponent } from './pages/fallback/fallback.component';
 
-export const routes: Routes = [{ path: '', component: HomeComponent },
-{ path: 'about', component: AboutComponent },
-{ path: 'search-results', component: SearchResultsComponent },
-{ path: 'fallback', component: FallbackComponent },
-{ path: 'category/:slug', component: CategoryComponent },
-{ path: 'product/:slug', component: ProductDetailComponent }];
+export const routes: Routes = [
+    {
+        path: '',
+        loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
+    },
+    {
+        path: 'about',
+        loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
+    },
+    {
+        path: 'search-results',
+        loadComponent: () => import('./pages/search-results/search-results.component')
+            .then(m => m.SearchResultsComponent)
+    },
+    {
+        path: 'fallback',
+        loadComponent: () => import('./pages/fallback/fallback.component')
+            .then(m => m.FallbackComponent)
+    },
+    {
+        path: 'category/:slug',
+        loadComponent: () => import('./pages/category/category.component')
+            .then(m => m.CategoryComponent)
+    },
+    {
+        path: 'product/:slug',
+        loadComponent: () => import('./pages/product-detail/product-detail.component')
+            .then(m => m.ProductDetailComponent)
+    }
+];
