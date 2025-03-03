@@ -6,13 +6,19 @@
     <p class="price">Price: ${{ product?.price }}</p>
     <h3>Related Products</h3>
     <div class="related-products">
-        @for (related of getRelatedProducts(); track related.slug) {
-            <div class="related-item">
-                <a [routerLink]="['/product', related.slug]">
-                    <img [src]="related?.image?.url" alt="{{ related.name }}">
-                    <p>{{ related.name }}</p>
+        @defer (on viewport) {
+        @for (relatedProduct of getRelatedProducts(); track relatedProduct.slug) {
+        <a [routerLink]="['/product', relatedProduct.slug]" class="related-item">
+            <img [src]="relatedProduct.image.url" [alt]="relatedProduct.name">
+            <p>{{ relatedProduct.name }}</p>
                 </a>
-            </div>
+            }
+        } @placeholder {
+        <div class="loading-placeholder">
+            <div class="skeleton-loader"></div>
+        </div>
+        } @loading {
+        <div class="loading-spinner">Loading...</div>
         }
     </div>
 </div>

@@ -3,7 +3,7 @@
     <ul class="category-list">
         @for (category of categories; track category.slug) {
         <li class="category-item">
-            <a [routerLink]="['/category', category.slug]">
+            <a [routerLink]="category.products.length > 0 ? ['/category', category.slug] : ['/fallback']">
                 {{ category.name }} ({{ category.products.length }})
             </a>
         </li>
