@@ -8,6 +8,6 @@
     </nav>
     <app-search />
     <button (click)="toggleTheme()" class="theme-button">
-        <ng-icon [name]="isDarkMode ? 'bootstrap:sun' : 'bootstrap:moon'" />
+        <ng-icon [name]="(isDarkMode$ | async) ? 'bootstrap:sun' : 'bootstrap:moon'" />
     </button>
 </header>

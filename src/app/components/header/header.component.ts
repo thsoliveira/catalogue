@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 import { NgIconsModule } from '@ng-icons/core';
 import { SearchComponent } from '../search/search.component';
+import { map } from 'rxjs/operators';
+import type { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -13,14 +15,15 @@ import { SearchComponent } from '../search/search.component';
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent {
-  isDarkMode = false;
+  isDarkMode$: Observable<boolean>;
 
   constructor(private themeService: ThemeService) {
-    this.isDarkMode = document.documentElement.classList.contains('dark-mode');
+    this.isDarkMode$ = this.themeService.theme$.pipe(
+      map(theme => theme === 'dark')
+    );
   }
 
   toggleTheme() {
     this.themeService.toggleTheme();
-    this.isDarkMode = !this.isDarkMode;
   }
 }
